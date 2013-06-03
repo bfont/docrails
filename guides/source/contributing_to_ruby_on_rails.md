@@ -375,13 +375,13 @@ Navigate to the Rails [GitHub repository](https://github.com/rails/rails) and pr
 Add the new remote to your local repository on your local machine:
 
 ```bash
-$ git remote add mine git@github.com:<your user name>/rails.git
+$ git remote add origin git@github.com:<your user name>/rails.git
 ```
 
 Push to your remote:
 
 ```bash
-$ git push mine my_new_branch
+$ git push origin my_new_branch
 ```
 
 You might have cloned your forked repository into your machine and might want to add the original Rails repository as a remote instead, if that's the case here's what you have to do.
@@ -389,20 +389,20 @@ You might have cloned your forked repository into your machine and might want to
 In the directory you cloned your fork:
 
 ```bash
-$ git remote add rails git://github.com/rails/rails.git
+$ git remote add upstream git://github.com/rails/rails.git
 ```
 
 Download new commits and branches from the official repository:
 
 ```bash
-$ git fetch rails
+$ git fetch upstream
 ```
 
 Merge the new content:
 
 ```bash
 $ git checkout master
-$ git rebase rails/master
+$ git rebase upstream/master
 ```
 
 Update your fork:
@@ -415,7 +415,7 @@ If you want to update another branch:
 
 ```bash
 $ git checkout branch_name
-$ git rebase rails/branch_name
+$ git rebase upstream/branch_name
 $ git push origin branch_name
 ```
 
